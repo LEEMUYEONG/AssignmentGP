@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b4vtmtm0gyo14"]
+
+[ext_resource type="Script" uid="uid://riasegyxxc7h" path="res://cb.gd" id="1_f1uj2"]
+[ext_resource type="Texture2D" uid="uid://cit2r817fikrv" path="res://Assets/GP Assets/CH.png" id="2_k42qw"]
+[ext_resource type="AudioStream" uid="uid://dtcmmsdyxypl4" path="res://Assets/Effect/freesound_community-dropping-rocks-5996.mp3" id="3_f1uj2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k42qw"]
+atlas = ExtResource("2_k42qw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1uj2"]
+atlas = ExtResource("2_k42qw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ssqy"]
+atlas = ExtResource("2_k42qw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wterh"]
+atlas = ExtResource("2_k42qw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sunp5"]
+atlas = ExtResource("2_k42qw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qabuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k42qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1uj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ssqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wterh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sunp5")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k42qw"]
+radius = 43.011627
+
+[node name="CB" type="Area2D" unique_id=168920802 groups=["cb"]]
+script = ExtResource("1_f1uj2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1085172501]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_qabuj")
+animation = &"IDLE"
+frame_progress = 0.92180514
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1855864554]
+position = Vector2(-2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_k42qw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1806922374]
+stream = ExtResource("3_f1uj2")
+volume_db = -5.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

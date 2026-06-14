@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cjmij5dec1vft"]
+
+[ext_resource type="Script" uid="uid://0n7gqv5jv60r" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="FontFile" path="res://fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.tres" id="3_8sq4i"]
+
+[sub_resource type="FontFile" id="FontFile_n2snw"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+
+[node name="HUD" type="CanvasLayer" unique_id=1407552401]
+script = ExtResource("1_37p78")
+
+[node name="ALabel" type="Label" parent="." unique_id=242708577]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -279.0
+offset_top = 163.0
+offset_right = 286.0
+offset_bottom = 231.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontFile_n2snw")
+theme_override_font_sizes/font_size = 50
+text = "여기에 놓을 수 없습니다."
+
+[node name="ELabel" type="Label" parent="." unique_id=1735105920]
+visible = false
+offset_left = 79.0
+offset_top = 128.0
+offset_right = 485.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("3_8sq4i")
+theme_override_font_sizes/font_size = 26
+text = "E키를 눌러 상호작용하세요."
+
+[node name="LeftLabel" type="Label" parent="." unique_id=2116294006]
+visible = false
+offset_left = -37.0
+offset_top = -13.0
+offset_right = 3.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 40
+text = "D"
+
+[node name="RightLabel" type="Label" parent="." unique_id=2009231151]
+visible = false
+offset_left = 26.0
+offset_top = -12.0
+offset_right = 66.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 40
+text = "A"
+
+[node name="UpLabel" type="Label" parent="." unique_id=1228583899]
+visible = false
+offset_left = -7.6
+offset_top = -44.0
+offset_right = 32.4
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 40
+text = "W"
+
+[node name="DownLabel" type="Label" parent="." unique_id=1570275145]
+visible = false
+offset_left = -7.6
+offset_top = -44.0
+offset_right = 32.4
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 40
+text = "S"
+
+[node name="QLabel" type="Label" parent="." unique_id=1911805680]
+visible = false
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 87.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("3_8sq4i")
+theme_override_font_sizes/font_size = 20
+text = "Q로 상호작용"

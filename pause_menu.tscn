@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bwjdtyvd11drl"]
+
+[ext_resource type="Script" uid="uid://c42wo486d5vxy" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[node name="PauseMenu" type="Control" unique_id=40776825]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hdmo1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1537755527]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1729396702]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -572.0
+offset_top = -1048.0
+offset_right = 572.0
+offset_bottom = 1048.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 0.56078434)
+
+[node name="Resume" type="Button" parent="CanvasLayer" unique_id=1093225907]
+offset_left = 476.0
+offset_top = 897.0
+offset_right = 764.0
+offset_bottom = 1001.0
+theme_override_font_sizes/font_size = 70
+text = "계속하기"
+
+[node name="Regame" type="Button" parent="CanvasLayer" unique_id=1931786000]
+offset_left = 812.0
+offset_top = 899.0
+offset_right = 1100.0
+offset_bottom = 1003.0
+theme_override_font_sizes/font_size = 70
+text = "다시하기
+"
+
+[node name="BGMSlider" type="HSlider" parent="CanvasLayer" unique_id=1176914300]
+modulate = Color(0.101770006, 0.45984125, 0.5175746, 1)
+self_modulate = Color(0.27375188, 1, 0.9376485, 1)
+offset_left = 520.0
+offset_top = -50.0
+offset_right = 804.3334
+offset_bottom = 80.0
+scale = Vector2(3, 3)
+
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer" unique_id=793257501]
+offset_left = 518.0
+offset_top = 366.0
+offset_right = 801.6667
+offset_bottom = 390.0
+scale = Vector2(3, 3)
+
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=1843603840]
+offset_left = 1140.0
+offset_top = 900.0
+offset_right = 1358.0
+offset_bottom = 1004.0
+theme_override_font_sizes/font_size = 70
+text = "나가기
+"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=890682134]
+offset_left = 897.0
+offset_top = 49.0
+offset_right = 1012.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 50
+text = "BGM"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1292724491]
+offset_left = 909.0
+offset_top = 303.0
+offset_right = 994.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=622122140]
+offset_left = 821.0
+offset_top = 447.0
+offset_right = 1212.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 50
+text = "플레이 방법
+"
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=363085993]
+offset_left = 656.0
+offset_top = 627.0
+offset_right = 804.0
+offset_bottom = 768.0
+theme_override_font_sizes/font_size = 50
+text = "    W"
+
+[node name="Label6" type="Label" parent="CanvasLayer" unique_id=288102448]
+offset_left = 632.0
+offset_top = 702.0
+offset_right = 780.0
+offset_bottom = 843.0
+theme_override_font_sizes/font_size = 50
+text = "A"
+
+[node name="Label7" type="Label" parent="CanvasLayer" unique_id=1554098625]
+offset_left = 718.0
+offset_top = 784.0
+offset_right = 866.0
+offset_bottom = 925.0
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label9" type="Label" parent="CanvasLayer" unique_id=222616445]
+offset_left = 442.0
+offset_top = 548.0
+offset_right = 705.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 50
+text = "카메라 회전
+"
+
+[node name="Label8" type="Label" parent="CanvasLayer" unique_id=469511106]
+offset_left = 789.0
+offset_top = 699.0
+offset_right = 937.0
+offset_bottom = 840.0
+theme_override_font_sizes/font_size = 50
+text = "D"
+
+[node name="Label5" type="Label" parent="CanvasLayer" unique_id=134045638]
+offset_left = 988.0
+offset_top = 562.0
+offset_right = 1280.0
+offset_bottom = 777.0
+theme_override_font_sizes/font_size = 50
+text = "상호작용 : E
+
+상자 들기 : Q"
+
+[connection signal="pressed" from="CanvasLayer/Regame" to="." method="_on_regame_pressed"]

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://diqhswel2fypt"]
+
+[ext_resource type="Script" uid="uid://dhi1ycjjdkn5m" path="res://title.gd" id="1_e4n62"]
+[ext_resource type="Texture2D" uid="uid://bj753bpti24tj" path="res://Assets/GP Assets/title (1).png" id="2_ax32a"]
+[ext_resource type="Texture2D" uid="uid://d3eoigy335nbm" path="res://Assets/GP Assets/3061cb7e-a584-4596-adcc-ad68509d7ee8-removebg-preview.png" id="2_quvj1"]
+[ext_resource type="FontFile" path="res://fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.tres" id="3_quvj1"]
+[ext_resource type="PackedScene" uid="uid://bwjdtyvd11drl" path="res://pause_menu.tscn" id="5_rg4ux"]
+
+[node name="Title" type="Control" unique_id=390296395]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e4n62")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=331762878]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=774976267]
+offset_left = -197.0
+offset_top = -87.0
+offset_right = 2251.0
+offset_bottom = 1215.0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1150449158]
+offset_left = 1214.0
+offset_top = -39.0
+offset_right = 2031.0
+offset_bottom = 1133.0
+color = Color(0.5749978, 0.57499784, 0.57499784, 1)
+
+[node name="Togi" type="Sprite2D" parent="CanvasLayer" unique_id=1331291789]
+position = Vector2(1535, 551)
+rotation = 0.1797689
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_quvj1")
+
+[node name="GameTitle" type="Sprite2D" parent="CanvasLayer" unique_id=1160820913]
+position = Vector2(608.00006, 432.00003)
+rotation = -0.057595864
+scale = Vector2(2.7, 2.693)
+texture = ExtResource("2_ax32a")
+
+[node name="NewGame" type="Button" parent="CanvasLayer" unique_id=1020768371]
+offset_left = 252.0
+offset_top = 848.0
+offset_right = 442.0
+offset_bottom = 924.0
+theme_override_fonts/font = ExtResource("3_quvj1")
+theme_override_font_sizes/font_size = 50
+text = "새 게임
+"
+
+[node name="Setting" type="Button" parent="CanvasLayer" unique_id=1010752993]
+offset_left = 291.0
+offset_top = 949.0
+offset_right = 399.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("3_quvj1")
+theme_override_font_sizes/font_size = 50
+text = "설정
+"
+
+[node name="PauseMenu" parent="." unique_id=40776825 instance=ExtResource("5_rg4ux")]
+layout_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/NewGame" to="." method="_on_new_game_pressed"]

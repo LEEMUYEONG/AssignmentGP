@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dd7miv7evp0np"]
+
+[ext_resource type="AudioStream" uid="uid://bes41lb3fonyb" path="res://Assets/Effect/픽셀 순환.mp3" id="1_sy5k4"]
+
+[node name="Node" type="Node" unique_id=1481966528]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1903170306]
+stream = ExtResource("1_sy5k4")
+volume_db = -25.0
+autoplay = true
+bus = &"BGM"
+parameters/looping = true

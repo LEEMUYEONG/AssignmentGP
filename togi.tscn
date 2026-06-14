@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://sbm5nt603dbl"]
+
+[ext_resource type="Texture2D" uid="uid://dba2tjybkgj8p" path="res://Assets/GP Assets/Togi.png" id="1_ixoyc"]
+[ext_resource type="Script" uid="uid://fpq8c3o66e35" path="res://togi.gd" id="1_l6bpm"]
+[ext_resource type="AudioStream" uid="uid://cna1ln5pwjlfh" path="res://Assets/Effect/Box_[cut_0sec].mp3" id="3_3xhhh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixoyc"]
+radius = 16.666666
+height = 46.666664
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xhhh"]
+radius = 33.333332
+
+[node name="Togi" type="RigidBody2D" unique_id=601591497 groups=["Togi"]]
+script = ExtResource("1_l6bpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398828703]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ixoyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055740723]
+rotation = -3.1415925
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CapsuleShape2D_ixoyc")
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=969580044]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1330851173]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_3xhhh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=242365104]
+stream = ExtResource("3_3xhhh")
+bus = &"SFX"

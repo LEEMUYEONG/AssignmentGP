@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dbqfq3ifbmpdi"]
+
+[ext_resource type="Texture2D" uid="uid://26otjntf6077" path="res://Assets/GP Assets/Box.png" id="1_g2tbl"]
+[ext_resource type="Script" uid="uid://7dtplblnnaqk" path="res://box.gd" id="1_oq5cr"]
+[ext_resource type="AudioStream" uid="uid://cna1ln5pwjlfh" path="res://Assets/Effect/Box_[cut_0sec].mp3" id="3_bqn3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn3j"]
+size = Vector2(18, 18)
+
+[node name="Box" type="RigidBody2D" unique_id=599589271 groups=["box"]]
+script = ExtResource("1_oq5cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938339622]
+texture = ExtResource("1_g2tbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1187303317]
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=1249360156]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1503209036]
+shape = SubResource("RectangleShape2D_bqn3j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1978244083]
+stream = ExtResource("3_bqn3j")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

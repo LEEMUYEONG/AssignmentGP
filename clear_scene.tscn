@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c0ox3wkoyol1t"]
+
+[ext_resource type="Script" uid="uid://b7jysxdkhsqw8" path="res://clear_scene.gd" id="1_uq5uw"]
+[ext_resource type="Texture2D" uid="uid://iflpaxcrf1ht" path="res://Assets/GP Assets/clear_text (1).png" id="2_2xypa"]
+[ext_resource type="Script" uid="uid://gj10tla1yooe" path="res://retry_button.gd" id="3_qn8h4"]
+
+[node name="ClearScene" type="Control" unique_id=1493891174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uq5uw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1969813650]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -99.0
+offset_right = 2004.0
+offset_bottom = 1103.0
+
+[node name="ClearImage" type="Sprite2D" parent="." unique_id=714477120]
+position = Vector2(953.99994, 461.00003)
+scale = Vector2(1.3809999, 1.4729166)
+texture = ExtResource("2_2xypa")
+
+[node name="RetryButton" type="Button" parent="." unique_id=1163709338]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 791.0
+offset_right = 1187.0
+offset_bottom = 933.0
+theme_override_font_sizes/font_size = 50
+text = "처음부터 다시하기
+"
+script = ExtResource("3_qn8h4")
+
+[connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_pressed"]

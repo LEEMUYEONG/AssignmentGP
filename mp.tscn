@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4jwkdefb7ea3"]
+
+[ext_resource type="Script" uid="uid://cg33t6qjr2x8n" path="res://mp.gd" id="1_y3ktp"]
+[ext_resource type="Texture2D" uid="uid://c660vfwylh3mn" path="res://Assets/GP Assets/Moving Flatform.png" id="2_5mga8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0vav"]
+size = Vector2(59, 7)
+
+[node name="MP" type="AnimatableBody2D" unique_id=244158012]
+script = ExtResource("1_y3ktp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=371139187]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_t0vav")
+
+[node name="Left" type="Sprite2D" parent="." unique_id=1734802850]
+position = Vector2(16, -1)
+rotation = 3.1415927
+texture = ExtResource("2_5mga8")
+
+[node name="Right" type="Sprite2D" parent="." unique_id=2091210449]
+position = Vector2(-16, 0)
+texture = ExtResource("2_5mga8")
